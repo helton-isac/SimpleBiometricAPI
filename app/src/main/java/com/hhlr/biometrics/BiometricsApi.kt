@@ -65,21 +65,24 @@ class BiometricsApi() {
         onAuthenticationFailedCallback: (e: Exception) -> Unit
     ) {
         try {
-            token?.let {
-                authResult.cryptoObject?.cipher?.apply {
-                    val encryptedKeyWrapper =
-                        cryptographyManager.encryptData(it, this)
-                    cryptographyManager.persistCipherTextWrapperToSharedPrefs(
-                        encryptedKeyWrapper,
-                        context,
-                        SHARED_PREFS_FILENAME,
-                        Context.MODE_PRIVATE,
-                        CIPHER_TEXT_PREF
-                    )
+            if (token != null && token.isNotEmpty()) {
+                token.let {
+                    authResult.cryptoObject?.cipher?.apply {
+                        val encryptedKeyWrapper =
+                            cryptographyManager.encryptData(it, this)
+                        cryptographyManager.persistCipherTextWrapperToSharedPrefs(
+                            encryptedKeyWrapper,
+                            context,
+                            SHARED_PREFS_FILENAME,
+                            Context.MODE_PRIVATE,
+                            CIPHER_TEXT_PREF
+                        )
+                    }
+                    onAuthenticationSucceeded(null)
                 }
-                onAuthenticationSucceeded(null)
+            } else {
+                onAuthenticationFailedCallback(Exception("Empty Token"))
             }
-            onAuthenticationFailedCallback(Exception("Empty Token"))
         } catch (e: Exception) {
             onAuthenticationFailedCallback(e)
         }
