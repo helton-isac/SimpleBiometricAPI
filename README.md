@@ -1,3 +1,6 @@
+[![Release](https://jitpack.io/v/https://jitpack.io/v/helton-isac/SimpleBiometricAPI.svg)]
+(https://jitpack.io/#helton-isac/SimpleBiometricAPI)
+
 # SimpleBiometricAPI
 
 API criada como parte do trabalho de conclusão de curso, baseada no code lab de biometrics do google, porém transformada em uma LIB: 

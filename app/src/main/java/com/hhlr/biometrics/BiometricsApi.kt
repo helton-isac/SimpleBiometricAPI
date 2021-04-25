@@ -6,6 +6,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
+import androidx.fragment.app.FragmentActivity
 import com.hhlr.biometrics.crypt.CryptographyManager
 import com.hhlr.biometrics.utils.BiometricPromptUtils
 import com.hhlr.biometrics.utils.CIPHER_TEXT_PREF
@@ -28,7 +29,7 @@ class BiometricsApi() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     fun showBiometricPromptForEncryption(
-        activityContext: AppCompatActivity,
+        activityContext: FragmentActivity,
         title: String,
         subtitle: String,
         negativeButtonText: String,
@@ -58,7 +59,7 @@ class BiometricsApi() {
     }
 
     private fun encryptAndStoreServerToken(
-        context: AppCompatActivity,
+        context: FragmentActivity,
         authResult: BiometricPrompt.AuthenticationResult,
         token: String?,
         onAuthenticationSucceeded: (plainText: String?) -> Unit,
@@ -143,7 +144,7 @@ class BiometricsApi() {
     }
 
     private fun decryptServerTokenFromStorage(
-        context: AppCompatActivity,
+        context: FragmentActivity,
         authResult: BiometricPrompt.AuthenticationResult,
         token: String?,
         onAuthenticationSucceededCallback: (plainText: String?) -> Unit,

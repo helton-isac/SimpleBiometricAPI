@@ -1,15 +1,15 @@
 package com.hhlr.biometrics.utils
 
-import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.FragmentActivity
 
 object BiometricPromptUtils {
     fun createBiometricPrompt(
-        context: AppCompatActivity,
+        context: FragmentActivity,
         token: String?,
         onAuthenticationSucceeded: (
-            context: AppCompatActivity,
+            context: FragmentActivity,
             result: BiometricPrompt.AuthenticationResult,
             token: String?,
             onAuthenticationSucceededCallback: (plainText: String?) -> Unit,
