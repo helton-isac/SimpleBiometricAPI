@@ -1,5 +1,6 @@
-[![Release](https://jitpack.io/v/https://jitpack.io/v/helton-isac/SimpleBiometricAPI.svg)]
-(https://jitpack.io/#helton-isac/SimpleBiometricAPI)
+[![Release](https://jitpack.io/v/helton-isac/SimpleBiometricAPI.svg)](https://jitpack.io/#helton-isac/SimpleBiometricAPI)
+
+
 
 # SimpleBiometricAPI
 
