@@ -3,7 +3,6 @@ package com.hhlr.biometrics
 import android.content.Context
 import android.os.Build
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.fragment.app.FragmentActivity
@@ -103,7 +102,7 @@ class BiometricsApi() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     fun showBiometricPromptForDecryption(
-        context: AppCompatActivity,
+        context: FragmentActivity,
         title: String,
         subtitle: String,
         negativeButtonText: String,
